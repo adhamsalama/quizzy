@@ -44,9 +44,7 @@ api.delete('/quizzes/:quiz', (req, res) => {
     res.sendStatus(200)
 })
 
-const port = 3000
-
-api.listen(port, () => console.log(`Server running at port ${port}`))
+api.listen(process.env.PORT, () => console.log(`Server running at port ${process.env.PORT}`))
 
 function getQuizzes() {
     return JSON.parse(fs.readFileSync(path.join(__dirname, 'quizzes.json'), {encoding: 'utf8'}))   
